@@ -3,12 +3,12 @@ Simple demonstration of using HTMX with SWI Prolog
 
 To see what is does, run the server:
 
-  swipl-win load.pl
+```
+swipl-win load.pl
+```
+and browse to http://localhost:4500/demo
 
-and browse to
-  http://localhost/demo
-
-Look [here](https://htmx.org/) for details of HTMX.
+See [here](https://htmx.org/) for details of HTMX.
 
 The look and feel is provided by [Pure CSS](https://purecss.io/)
 
