@@ -1,14 +1,18 @@
 # swipl_htmx_demo
 Simple demonstration of using HTMX with SWI Prolog
 
+Look [here](https://htmx.org/) for details of HTMX.
+
+The look and feel is provided by [Pure CSS](https://purecss.io/)
+
 ## React vs htmx
 Here is what AI says:
 
-React and htmx represent two divergent architectural philosophies for building web applications: React is a client-side component-based framework ideal for complex, highly interactive Single Page Applications (SPAs), while htmx is a lightweight, server-driven library that extends HTML to handle interactivity with minimal JavaScript. 
+React and htmx represent two divergent architectural philosophies for building web applications: React is a client-side component-based framework ideal for complex, highly interactive Single Page Applications (SPAs), while htmx is a lightweight, server-driven library that extends HTML to handle interactivity with minimal JavaScript.
 
 __Performance and Bundle Size__
 
-htmx offers superior initial load performance with a tiny ~14 KB bundle and no hydration delay, resulting in near-instant interactivity and high Lighthouse scores (often 94+).  In contrast, React requires a larger runtime (~44 KB base) plus application code, leading to larger bundles (150–400+ KB) and delayed Time-to-Interactive due to the client-side hydration process. 
+htmx offers superior initial load performance with a tiny ~14 KB bundle and no hydration delay, resulting in near-instant interactivity and high Lighthouse scores (often 94+).  In contrast, React requires a larger runtime (~44 KB base) plus application code, leading to larger bundles (150–400+ KB) and delayed Time-to-Interactive due to the client-side hydration process.
 
 __State Management and Architecture__
 
