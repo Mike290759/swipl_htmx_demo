@@ -1,6 +1,13 @@
 # swipl_htmx_demo
 Simple demonstration of using HTMX with SWI Prolog
 
+To see what is does, run the server:
+
+  swipl-win load.pl
+
+and browse to
+  http://localhost/demo
+
 Look [here](https://htmx.org/) for details of HTMX.
 
 The look and feel is provided by [Pure CSS](https://purecss.io/)
