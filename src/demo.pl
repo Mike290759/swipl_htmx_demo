@@ -62,8 +62,8 @@ home(_Request) :-
                               [ title('Demo'),
                                 meta('name="viewport" content="width=device-width, initial-scale=1"'),    % Make it look nice on a small screen
                                 \pure_style,
-                                script('https://unpkg.com/htmx.org@1.9.0', []),  % 2.0.0 caused problems with hx-disabled-elt
-                                script('https://unpkg.com/hyperscript.org@0.9.13', [])
+                                script(src('https://unpkg.com/htmx.org@1.9.0'), []),                      % 2.0.0 caused problems with hx-disabled-elt
+                                script(src('https://unpkg.com/hyperscript.org@0.9.13'), [])
                               ],
                               [ \html_requires(css('swif.css')),
                                 \search_form]),
