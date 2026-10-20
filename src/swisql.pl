@@ -81,7 +81,18 @@ sql_numeric(N) :-
     integer(B).
 
 
-sql_select(invoice{debtor_address_line_1:'19 Avion Tce',debtor_address_line_2:'Silverstream',debtor_address_line_3:'Upper Hutt 7865',debtor_address_line_4: @(null),debtor_email:'mike.elston@gmail.com',debtor_name:'Mike Elston',due_date:date(2024,8,20),gst:5130/100,invoice_date:date(2024,7,29),invoice_id:1,member_id:'ELSTONM',notes: @(null),total:39330/100,total_excl_gst:34200/100}:v,(v:notes=~='%%';v:member_id=~='%%';v:debtor_name=~='%%';v:debtor_email=~='%%';v:debtor_address_line_4=~='%%';v:debtor_address_line_3=~='%%';v:debtor_address_line_2=~='%%';v:debtor_address_line_1=~='%%';true),_).
+sql_select(Invoice:v,(v:notes=~='%%';v:member_id=~='%%';v:debtor_name=~='%%';v:debtor_email=~='%%';v:debtor_address_line_4=~='%%';v:debtor_address_line_3=~='%%';v:debtor_address_line_2=~='%%';v:debtor_address_line_1=~='%%';true),_) :-
+    invoice(_, Invoice).
+
+sql_select(Invoice:v, v:invoice_id==ID,_) :-
+    @@@(id(ID)),
+    invoice(ID, Invoice).
+
+
+invoice(1, invoice{debtor_address_line_1:'19 Avion Tce',debtor_address_line_2:'Silverstream',debtor_address_line_3:'Upper Hutt 7865',debtor_address_line_4: @(null),debtor_email:'mike.elston@gmail.com',debtor_name:'Mike Elston',due_date:date(2024,8,20),gst:5130/100,invoice_date:date(2024,7,29),invoice_id:1,member_id:'ELSTONM',notes: @(null),total:39330/100,total_excl_gst:34200/100}).
+
+invoice(2, invoice{debtor_address_line_1:'20 Egg St',debtor_address_line_2:'Petone',debtor_address_line_3:'Lower Hut 9010',debtor_address_line_4: @(null),debtor_email:'elon.musk@gmail.com',debtor_name:'Elon Musk',due_date:date(2026,9,21),gst:51300/100,invoice_date:date(2026,8,29),invoice_id:2,member_id:'ELSTONM',notes: @(null),total:393300/100,total_excl_gst:342000/100}).
+
 
 sql_delete(_,_,_).
 sql_insert(_, _, _, _).
