@@ -16,11 +16,11 @@ The look and feel is provided by [Pure CSS](https://purecss.io/)
 The demo uses SWIF (SWI Forms) as a wrapper around the low level HTMX to provide a convenient high level interface for forms based applications
 
 SWIF (SWI Forms) is a lightweight web application framework based on:
-  $ Pure CSS: https://purecss.io/
-  $ PostgreSQL: https://www.postgresql.org/
-  $ HTMX: https://htmx.org/
-  $ Hyperscript: https://hyperscript.org/
-  $ SWI Prolog: https://www.swi-prolog.org/
+* Pure CSS: https://purecss.io/
+* PostgreSQL: https://www.postgresql.org/
+* HTMX: https://htmx.org/
+* Hyperscript: https://hyperscript.org/
+* SWI Prolog: https://www.swi-prolog.org/
 
 This framework is intended for the rapid
 development of form-oriented web applications using the good looks of
