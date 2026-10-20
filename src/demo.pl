@@ -41,9 +41,11 @@ SOFTWARE.
 :- use_module(library(http/html_head)).
 :- use_module(library(http/html_write)).
 :- use_module(library(http/htmx)).
-% ??? :- use_module(library(http/http_header)).  % For test_bed
-% ??? :- use_module(library(http/http_stream)).  % For test_bed
 
+:- multifile http:location/3.
+:- dynamic   http:location/3.
+
+http:location(main, root(demo), []).
 
 :- initialization(http_server(http_dispatch, [port(4500)]), program).
 
@@ -54,15 +56,24 @@ SOFTWARE.
 
 :- http_handler(root(demo), home, []).
 
-home(_) :-
-    reply_html_page(
-         [ title('Demo'),
-           meta('name="viewport" content="width=device-width, initial-scale=1"'),    % Make it look nice on a small screen
-           \pure_style,
-           script('https://unpkg.com/htmx.org@1.9.0', []),  % 2.0.0 caused problems with hx-disabled-elt
-           script('https://unpkg.com/hyperscript.org@0.9.13', [])
-         ],
-         [ p('Egg')]).
+
+home(_Request) :-
+     catch_with_backtrace(reply_html_page(
+                              [ title('Demo'),
+                                meta('name="viewport" content="width=device-width, initial-scale=1"'),    % Make it look nice on a small screen
+                                \pure_style,
+                                script('https://unpkg.com/htmx.org@1.9.0', []),  % 2.0.0 caused problems with hx-disabled-elt
+                                script('https://unpkg.com/hyperscript.org@0.9.13', [])
+                              ],
+                              [ \html_requires(css('swif.css')),
+                                \search_form]),
+                          E,
+                          reply_html_page(title('Error'), \sf_error_description(E))).
+
+%!   search_form
+
+search_form -->
+     html(\search_form(invoice, #{'SEARCH_PURPOSE': view_update_delete})).
 
 
 %!  pure_style is det.
@@ -72,4 +83,14 @@ pure_style -->
               href('https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css'),
               integrity('sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls'),
               crossorigin(anonymous)])).
+
+
+
+
+
+
+
+
+
+
 

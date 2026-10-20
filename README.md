@@ -12,6 +12,23 @@ See [here](https://htmx.org/) for details of HTMX.
 
 The look and feel is provided by [Pure CSS](https://purecss.io/)
 
+## SWIF
+The demo uses SWIF (SWI Forms) as a wrapper around the low level HTMX to provide a convenient high level interface for forms based applications
+
+SWIF (SWI Forms) is a lightweight web application framework based on:
+  $ Pure CSS: https://purecss.io/
+  $ PostgreSQL: https://www.postgresql.org/
+  $ HTMX: https://htmx.org/
+  $ Hyperscript: https://hyperscript.org/
+  $ SWI Prolog: https://www.swi-prolog.org/
+
+This framework is intended for the rapid
+development of form-oriented web applications using the good looks of
+Pure CSS, the platform independence of PostgreSQL, the
+hypertext-for-everything capabilities of HTMX and Hyperscript (all
+coding done on the server side) and a forward chaining form rules engine
+that simplifies form state management all integrated in SWI Prolog.
+
 ## React vs htmx
 Here is what AI says:
 

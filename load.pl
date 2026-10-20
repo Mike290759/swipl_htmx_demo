@@ -1,5 +1,7 @@
-:- use_module(demo).
+:- [files].
 
 :-  emacs,
     edit('load.pl'),
-    edit('demo').
+    edit('files.pl'),
+    edit(src(swisql)),
+    edit(src(demo)).
